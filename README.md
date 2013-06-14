@@ -15,7 +15,7 @@ Use the `tpl!` prefix when loading a template.
 define(['tpl!mytemplate.tpl', function (template) {
 
     MyView = Backbone.View.extend({
-      template: template // just pass in the template string
+      template: template // just pass in the template
                          // do not use _.template(), at this point it is already compiled
     });
 
