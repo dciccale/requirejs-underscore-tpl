@@ -12,15 +12,14 @@ Use the `tpl!` prefix when loading a template.
 `myview.js`
 
 ```javascript
-define(['tpl!mytemplate.tpl', function (template) {
+define(['tpl!mytemplate.tpl'], function (template) {
 
-    var MyView = Backbone.View.extend({
-      template: template // just pass in the template
-    });                  // do not use _.template(), at this point it is already compiled
+  var MyView = Backbone.View.extend({
+    template: template // just pass in the template
+  });                  // do not use _.template(), at this point it is already compiled
 
-    return MyView;
-  }
-]);
+  return MyView;
+});
 ```
 
 The plugin will compile the template after requirejs `r.js` optimizer.
