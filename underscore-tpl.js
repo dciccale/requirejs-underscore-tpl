@@ -14,6 +14,8 @@
 
 define(['underscore', 'text'], function (_, text) {
 
+  'use strict';
+
   var buildMap = {};
 
   var tpl = {
