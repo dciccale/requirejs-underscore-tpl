@@ -26,7 +26,7 @@ define(['tpl!mytemplate.tpl', function (template) {
 The plugin will compile the template after requirejs `r.js` optimizer.
 
 And also when developing, it will compile the template the first time is loaded so that the next
-time is required it will just render te template saving a function call to underscore's internal render method.
+time is required it will just render the template saving a function call to underscore's internal render method.
 
 ## Dependecies
 
