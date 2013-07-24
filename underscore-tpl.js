@@ -41,7 +41,7 @@ define(['underscore', 'text'], function (_, text) {
 
     write: function (pluginName, moduleName, write) {
       if (buildMap.hasOwnProperty(moduleName)) {
-        write('define("' + pluginName + '!' + moduleName + '", function () { ' +
+        write('define("' + pluginName + '!' + moduleName + '", ["underscore"], function(_) { ' +
           'return ' + buildMap[moduleName] + ';' +
         '});\n'
         );
