@@ -23,8 +23,13 @@ define(['underscore', 'text'], function (_, text) {
 
     load: function (name, req, onLoadNative, config) {
       var onLoad = function (content) {
+
         // compile the template
-        content = _.template(content);
+        if (config.templateSettings) {
+          content = _.template(content, config.templateSettings);
+        } else {
+          content = _.template(content);
+        }
 
         if (config.isBuild) {
           content = buildMap[name] = content.source;
