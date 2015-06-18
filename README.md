@@ -27,6 +27,21 @@ The plugin will compile the template after requirejs `r.js` optimizer.
 And also when developing, it will compile the template the first time is loaded so that the next
 time is required it will just render the template saving a function call to underscore's internal render method.
 
+## Configuration
+
+You can pass underscoreTemplateSettings to RequireJS config
+
+```javascript
+requirejs.config({
+  config: {
+    underscoreTemplateSettings: {
+      interpolate: /\{\{\s*([^#\{]+?)\s*\}\}/g,  // {{ title }}
+      evaluate:    /\{\{#([\s\S]+?)\}\}/g,       // {{# console.log("stuff") }}
+      escape:      /\{\{\{([\s\S]+?)\}\}\}/g     // {{{ title }}}
+    }
+  });
+```
+
 ## Dependecies
 
 For this plugin to work you need:

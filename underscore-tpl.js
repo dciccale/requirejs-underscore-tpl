@@ -25,7 +25,7 @@ define(['underscore', 'text'], function (_, text) {
       var onLoad = function (content) {
 
         // compile the template
-        content = _.template(content, config.templateSettings || {});
+        content = _.template(content, config.underscoreTemplateSettings || {});
 
         if (config.isBuild) {
           content = buildMap[name] = content.source;
