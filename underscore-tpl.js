@@ -24,8 +24,11 @@ define(['underscore', 'text'], function (_, text) {
     load: function (name, req, onLoadNative, config) {
       var onLoad = function (content) {
 
+        // Merge settings
+        _.extend(_.templateSettings, config.underscoreTemplateSettings || {})
+
         // compile the template
-        content = _.template(content, config.underscoreTemplateSettings || {});
+        content = _.template(content);
 
         if (config.isBuild) {
           content = buildMap[name] = content.source;
